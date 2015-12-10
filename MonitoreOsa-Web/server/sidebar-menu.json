@@ -1,0 +1,13 @@
+[
+  {
+    "text": "Main Navigation",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Template",
+    "sref": "app.template",
+    "icon": "icon-grid",
+    "label": "label label-success"
+  }
+]

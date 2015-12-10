@@ -1,0 +1,2 @@
+Me falto la comunicacion del servicio con el controlador perdi mucho el tiempo en eso.
+y terminar de desarrollar la logica del app, mas qu todo obtener las letras de la palabra.

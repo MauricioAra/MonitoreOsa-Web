@@ -1,0 +1,67 @@
+<!--
+* created by Mauricio Araica v1.0
+-->
+<div class="container">
+  <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+             <h5 class="losh3">Registrar empleado</h5>
+             <div class="row">
+               <form class="col s12">
+                 <div class="row">
+                   <div class="input-field col s6">
+                     <input  ng-model="nuevoEmpleado.nombre"  id="first_name" type="text" class="validate">
+                     <label for="first_name">Nombre</label>
+                   </div>
+                   <div class="input-field col s6">
+                     <input  ng-model="nuevoEmpleado.correo" id="last_name" type="text" class="validate">
+                     <label for="last_name">Correo</label>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="input-field col s12">
+                     <input ng-model="nuevoEmpleado.telefono"  id="email" type="text" class="validate">
+                     <label for="email">Telefono</label>
+                   </div>
+                 </div>
+               </form>
+             </div>
+            <input type="hidden" ng-model="nuevoEmpleado.id"/>
+            </div>
+            <div class="card-action">
+              <a class="waves-effect  waves-ripple btn grey lighten-5" ng-click="save()">Guardar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="row">
+    <div class="col s6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="avistamiento in avistamientos">
+            <td>{{avistamiento.avistamiento.avistamiento}}</td>
+            <td>{{avistamiento.avistamiento.fecha}}</td>
+            <td>{{avistamiento.avistamiento.hora}}</td>
+            <td>
+              <a  class="btn btn-success" href="#" ng-click="edit(empleado.id)">Modificar</a>
+              <a class="btn btn-warning" href="#" ng-click="delete(empleado.id)">Eliminar</a>
+              <button type="button" class="btn btn-info" ui-sref="app.verEmpleado({id:empleado.id})">Ver
+  					  </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</div>
+<script src="app/js/Controllers/InicioController.js"></script>
+<script type="text/javascript" src="app/js/Services/EmpleadoService.js"></script>

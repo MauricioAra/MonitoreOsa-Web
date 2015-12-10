@@ -1,0 +1,70 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper teal accent-4">
+    <form>
+      <div class="input-field">
+        <input id="search" placeholder="Buscar..." ng-model="buscar" type="search" required>
+        <label for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
+</nav>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+      <a ng-click="exportar()" class="btn-floating btn-large waves-effect waves-light  light-blue accent-4">
+        <i class="large material-icons"><img src="app/img/descargar.png"/></i>
+      </a>
+    </div>
+     <div class="col s12">
+       <div class="card-panel teal">
+         <div class="row">
+           <div class="col s6">
+             <a ng-click="volver()" class="waves-effect waves-light btn"><i class="material-icons left"><img src="app/img/back.png"/></i>Volver</a>
+           </div>
+           <div class="col s6">
+             <span class="white-text">Personaliza el reporte con tú búsqueda preferida en el campo de texto de arriba o bien exporta todo el contenido.
+             </span>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="row">
+          <div class="col s12">
+            <div id="exportable">
+            <table class="table highlight bordered responsive-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Avistamiento</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Latitud</th>
+                  <th>Longitud</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="avistamiento in avistamientos | filter:buscar">
+                  <td>{{ $index + 1 }}</td>
+                  <td>{{avistamiento.avistamiento}}</td>
+                  <td>{{avistamiento.fecha}}</td>
+                  <td>{{avistamiento.hora}}</td>
+                  <td>{{avistamiento.latitud}}</td>
+                  <td>{{avistamiento.longitud}}</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app/js/Controllers/ReporteAvistamientoController.js"></script>

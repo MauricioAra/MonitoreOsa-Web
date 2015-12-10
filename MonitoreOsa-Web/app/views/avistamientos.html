@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+     <h5 class="losh3 Regular">Avistamientos</h5>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input type="text" ng-model="buscar"/>
+        <label for="icon_prefix">Buscar...</label>
+      </div>
+       <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+         <a ng-click="exportar()" class="btn-floating btn-large waves-effect waves-light teal accent-4 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Descargar" >
+           <i class="large material-icons"><img src="app/img/foward.png"/></i>
+         </a>
+       </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="row">
+          <div class="col s12">
+            <div id="exportable">
+            <table class="table highlight bordered responsive-table">
+              <thead>
+                <tr>
+                  <th>Avistamiento</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Latitud</th>
+                  <th>Longitud</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="avistamiento in avistamientos | filter:buscar | startFrom:currentPage*pageSize | limitTo:pageSize">
+                  <td>{{avistamiento.avistamiento}}</td>
+                  <td>{{avistamiento.fecha}}</td>
+                  <td>{{avistamiento.hora}}</td>
+                  <td>{{avistamiento.latitud}}</td>
+                  <td>{{avistamiento.longitud}}</td>
+                  <td>
+                    <a class="btn-floating btn-large waves-effect waves-light red" href="#" ng-click="delete(empleado.id)"><i class="material-icons">delete</i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="center-align">
+              <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                  <i class="material-icons">chevron_left</i>
+              </button>
+                {{currentPage+1}}/{{numberOfPages()}}
+              <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                  <i class="material-icons">chevron_right</i>
+              </button>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app/js/Controllers/AvistamientoController.js"></script>
+<script type="text/javascript" src="app/js/Services/AvistamientoService.js"></script>
