@@ -1,0 +1,52 @@
+  <div class="parallax-container">
+    <div class="parallax"><img src="app/img/bird.png"/></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">MonitoreOsa</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      <div ng-controller="IniciarSesionCtrl" class="col s6">
+          <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><i class="material-icons">input</i>Iniciar sesión</div>
+              <div class="collapsible-body grey lighten-4">
+                <div class="row">
+                       <div class="card ">
+                         <div class="card-content">
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">email</i>
+                              <input ng-model="correo" id="icon_prefix" type="email" class="validate">
+                              <label for="icon_prefix">Correo</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">vpn_key</i>
+                              <input ng-model="contrasena" id="icon_prefix" type="password" class="validate">
+                              <label for="icon_prefix">Contraseña</label>
+                            </div>
+                          </div>
+                          <div>
+                            <a ng-click="go()" class="waves-effect waves-teal btn teal accent-4">Ingresar</a>
+                          </div>
+                       </div>
+                     </div>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="app/img/but.png"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Misión</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+<script type="text/javascript" src="app/js/Controllers/InicioController.js"></script>

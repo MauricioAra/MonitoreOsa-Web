@@ -78,7 +78,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
   $locationProvider.html5Mode(false);
 
   // defaults to dashboard
-  $urlRouterProvider.otherwise('/app/avistamientos');
+  $urlRouterProvider.otherwise('/page/Inicio');
 
   //
   // Application Routes
@@ -125,10 +125,17 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         controller: 'ReporteAvistamientoCtrl',
         templateUrl: 'app/pages/reporte_avistamiento.html'
     })
-    .state('page.login', {
-        url: '/login',
-        title: "Login",
-        templateUrl: 'app/pages/login.html'
+    .state('page.inicio', {
+        url: '/Inicio',
+        title: 'MonitoreOsa',
+        controller: 'InicioController',
+        templateUrl: 'app/pages/first_page.html'
+    })
+    .state('page.iniciarSesion', {
+        url: '/IniciarSesion',
+        title: "Bienvenido",
+        controller: 'IniciarSesionCtrl',
+        templateUrl: 'app/pages/iniciar_sesion.html'
     })
     // CUSTOM RESOLVES
     //   Add your own resolves properties
