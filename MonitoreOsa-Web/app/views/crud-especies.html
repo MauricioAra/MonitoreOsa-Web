@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+     <h5 class="losh3 Regular">Especies</h5>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input type="text" ng-model="buscar"/>
+        <label for="icon_prefix">Buscar...</label>
+      </div>
+       <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+         <a ng-click="registrar()" class="btn-floating btn-large waves-effect waves-light teal accent-4 btn tooltipped" data-position="left" data-delay="50">
+           <i class="material-icons">add</i>
+         </a>
+       </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="row">
+          <div class="col s12">
+            <div id="exportable">
+            <table class="table highlight bordered responsive-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Nombre científico</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="especie in listaEspecies | filter:buscar | startFrom:currentPage*pageSize | limitTo:pageSize">
+                  <td>{{especie.nombre}}</td>
+                  <td>{{especie.nombre_cientifico}}</td>
+                  <td>
+                    <a class="btn-floating btn-large waves-effect waves-light red" href="#" ng-click="delete(empleado.id)"><i class="material-icons">delete</i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="center-align">
+              <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                  <i class="material-icons">chevron_left</i>
+              </button>
+                {{currentPage+1}}/{{numberOfPages()}}
+              <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                  <i class="material-icons">chevron_right</i>
+              </button>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Registrar nueva especie</h4>
+    <div class="row">
+   <form class="col s12">
+     <div class="row">
+       <div class="input-field col s12">
+         <input id="nombre_especie" type="text" class="validate">
+         <label for="nombre_especie">Nombre</label>
+       </div>
+     </div>
+     <div class="row">
+       <div class="input-field col s12">
+         <input id="nombre_cientifico" type="text" class="validate">
+         <label for="nombre_cientifico">Nombre científico</label>
+       </div>
+     </div>
+     <div class="row">
+       <div class="input-field col s12">
+         <textarea id="descripcion" class="materialize-textarea"></textarea>
+          <label for="descripcion">Descripcion</label>
+       </div>
+     </div>
+     <div class="row">
+       <div class="input-field col s12">
+         <div class="input-field col s12">
+           <select id="sltClases">
+             <option value="" disabled selected>Clases</option>
+             <option value="Ave">Ave</option>
+             <option value="Planta">Planta</option>
+             <option value="mamifero-terrestre">Mamifero terrestre</option>
+             <option value="mamifero-acuatico">Mamifero acuático</option>
+             <option value="Reptil">Anfibio o reptil terrestre</option>
+             <option value="Reptil-acuatico">Anfibio o reptil acuático</option>
+           </select>
+  </div>
+       </div>
+     </div>
+   </form>
+ </div>
+  </div>
+  <div class="modal-footer">
+    <a ng-click="aceptarRegistro()" class="modal-action modal-close waves-effect waves-green btn-flat ">Aceptar</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+  </div>
+</div>

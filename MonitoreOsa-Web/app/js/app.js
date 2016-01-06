@@ -109,6 +109,12 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         controller: 'AvistamientoCtrl',
         templateUrl: helper.basepath('avistamientos.html')
     })
+    .state('app.crud-especies', {
+        url: '/ManejoEspecies',
+        title: "Ingrese las especies",
+        controller: 'EspeciesCtrl',
+        templateUrl: 'app/views/crud-especies.html'
+    })
     // Single Page Routes
     // -----------------------------------
     .state('page', {
@@ -137,6 +143,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         controller: 'IniciarSesionCtrl',
         templateUrl: 'app/pages/iniciar_sesion.html'
     })
+
     // CUSTOM RESOLVES
     //   Add your own resolves properties
     //   following this object extend
