@@ -1,10 +1,10 @@
-<div class="navbar-fixed">
+<div ng-controller="InicioController" class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper grey lighten-5">
+    <div class="nav-wrapper blue-grey">
       <a href="#!" class="brand-logo losh3">MonitoreOsa</a>
       <ul class="right hide-on-med-and-down">
-        <li ng-click="OpenSearch()"><a class="losh3" >Avistamientos</a></li>
-        <li ng-click="OpenSearch()"><a class="losh3" >Especies</a></li>
+        <li><a ng-click="avistamientos()">Avistamientos</a></li>
+        <li><a ng-click="especies()">Especies</a></li>
       </ul>
     </div>
   </nav>

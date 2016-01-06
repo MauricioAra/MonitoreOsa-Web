@@ -8,4 +8,9 @@ App.controller('InicioController',function($state,$scope,AvistamientoService,$ti
   $scope.avistamientos = function(){
     $state.go('app.avistamientos');
   }
+  //
+  $scope.especies = function(){
+    $state.go('app.crud-especies');
+  }
+  
 });
