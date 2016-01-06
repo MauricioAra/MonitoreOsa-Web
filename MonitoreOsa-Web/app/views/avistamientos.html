@@ -33,13 +33,13 @@
               </thead>
               <tbody>
                 <tr ng-repeat="avistamiento in avistamientos | filter:buscar | startFrom:currentPage*pageSize | limitTo:pageSize">
-                  <td>{{avistamiento.avistamiento}}</td>
-                  <td>{{avistamiento.fecha}}</td>
-                  <td>{{avistamiento.hora}}</td>
-                  <td>{{avistamiento.latitud}}</td>
-                  <td>{{avistamiento.longitud}}</td>
+                  <td>{{avistamiento.avistamiento.avistamiento}}</td>
+                  <td>{{avistamiento.avistamiento.fecha}}</td>
+                  <td>{{avistamiento.avistamiento.hora}}</td>
+                  <td>{{avistamiento.avistamiento.latitud}}</td>
+                  <td>{{avistamiento.avistamiento.longitud}}</td>
                   <td>
-                    <a class="btn-floating btn-large waves-effect waves-light red" href="#" ng-click="delete(empleado.id)"><i class="material-icons">delete</i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light red" href="#" ng-click="eliminar(avistamiento)"><i class="material-icons">delete</i></a>
                   </td>
                 </tr>
               </tbody>
