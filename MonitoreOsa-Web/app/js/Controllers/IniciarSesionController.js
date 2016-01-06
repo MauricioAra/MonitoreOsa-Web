@@ -10,4 +10,7 @@ App.controller('IniciarSesionCtrl',function($state,$scope,UsuarioService){
   $scope.go = function(){
     $state.go('app.avistamientos');
   }
+  $scope.especies = function(){
+    $state.go('app.crud-especies');
+  }
 });
