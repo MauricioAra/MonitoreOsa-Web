@@ -1,0 +1,9 @@
+{
+  "firebase": "monitoreosaweb",
+  "public": "MonitoreOsa-Web",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
