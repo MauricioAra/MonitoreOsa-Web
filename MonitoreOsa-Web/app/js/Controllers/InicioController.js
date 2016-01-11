@@ -5,5 +5,12 @@ App.controller('InicioController',function($state,$scope,AvistamientoService,$ti
     $('.parallax').parallax();
   });
   //
+  $scope.avistamientos = function(){
+    $state.go('app.avistamientos');
+  }
+  //
+  $scope.especies = function(){
+    $state.go('app.crud-especies');
+  }
   
 });

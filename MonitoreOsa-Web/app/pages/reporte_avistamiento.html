@@ -14,7 +14,7 @@
 <div class="container">
   <div class="row">
     <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
-      <a ng-click="exportar()" class="btn-floating btn-large waves-effect waves-light  light-blue accent-4">
+      <a ng-click="exportar()" class="btn-floating btn-large waves-effect waves-light  orange darken-4">
         <i class="large material-icons"><img src="app/img/descargar.png"/></i>
       </a>
     </div>
@@ -52,11 +52,11 @@
               <tbody>
                 <tr ng-repeat="avistamiento in avistamientos | filter:buscar">
                   <td>{{ $index + 1 }}</td>
-                  <td>{{avistamiento.avistamiento}}</td>
-                  <td>{{avistamiento.fecha}}</td>
-                  <td>{{avistamiento.hora}}</td>
-                  <td>{{avistamiento.latitud}}</td>
-                  <td>{{avistamiento.longitud}}</td>
+                  <td>{{avistamiento.avistamiento.avistamiento}}</td>
+                  <td>{{avistamiento.avistamiento.fecha}}</td>
+                  <td>{{avistamiento.avistamiento.hora}}</td>
+                  <td>{{avistamiento.avistamiento.latitud}}</td>
+                  <td>{{avistamiento.avistamiento.longitud}}</td>
                 </tr>
               </tbody>
             </table>
