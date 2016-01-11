@@ -36,20 +36,17 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload){
           }
   }
 
-  $scope.prueba = function(){
-    $scope.imageStrings = [];
+  $scope.convertirImagen = function(){
     $scope.processFiles = function(files){
       angular.forEach(files, function(flowFile, i){
         var fileReader = new FileReader();
         fileReader.onload = function (event) {
           var uri = event.target.result;
-            $scope.imageStrings[i] = uri;
             imagenBase64 = uri;
-
         };
         fileReader.readAsDataURL(flowFile.file);
-  });
-};
+      });
+    };
   }
 
   $scope.aceptarRegistro = function(){
@@ -78,11 +75,10 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload){
       }
     }
 
-    console.log(objRegistro);
-    console.log(base64result);
-
     $http.post("https://mmullerc.cloudant.com/mamiferos/", objRegistro).then(function(response) {
+
       console.log(response);
+
     });
   }
 
