@@ -3,7 +3,6 @@
     <div class="card-content">
      <h5 class="losh3 Regular">Avistamientos</h5>
       <div class="input-field col s12">
-        <i class="material-icons prefix">search</i>
         <input type="text" ng-model="buscar"/>
         <label for="icon_prefix">Buscar...</label>
       </div>
@@ -47,11 +46,11 @@
             </div>
             <div class="center-align">
               <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-                  <i class="material-icons">chevron_left</i>
+                  <i class="small mdi-navigation-chevron-left"></i>
               </button>
                 {{currentPage+1}}/{{numberOfPages()}}
               <button class="waves-effect waves-teal btn-flat" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
-                  <i class="material-icons">chevron_right</i>
+                  <i class="small mdi-navigation-chevron-right"></i>
               </button>
             </div>
           </div>
