@@ -90,14 +90,21 @@
              <option value="Reptil">Anfibio o reptil terrestre</option>
              <option value="Reptil-acuatico">Anfibio o reptil acuático</option>
            </select>
-  </div>
+         </div>
        </div>
      </div>
+     <div flow-init
+       flow-name="uploader.flow"
+       flow-files-added="processFiles($files)">
+    <button ng-click="prueba()" flow-btn type="file">Ingresar Imagen</button>
+  </div>
+
    </form>
  </div>
-  </div>
+</div>
+<!-- Modal Structure -->
   <div class="modal-footer">
-    <a ng-click="aceptarRegistro()" class="modal-action modal-close waves-effect waves-green btn-flat ">Aceptar</a>
+    <a ng-click="aceptarRegistro()" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     <a class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
   </div>
 </div>

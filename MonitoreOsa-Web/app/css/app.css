@@ -10,3 +10,11 @@ body {
 .losh3{
   color:#80cbc4 ;
 }
+.preview {
+  width: 100px;
+  height: auto;
+}
+
+.text {
+  vertical-align: top;
+}

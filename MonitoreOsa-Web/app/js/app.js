@@ -26,7 +26,9 @@ var App = angular.module('monitoreosa', [
     'ngSanitize',
     'ngResource',
     'tmh.dynamicLocale',
-    'ui.utils'
+    'ui.utils',
+    'ngFileUpload',
+    'flow'
   ]);
 
 App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', function ($rootScope, $state, $stateParams, $window, $templateCache) {
@@ -369,7 +371,10 @@ App
                                                   'vendor/ag-grid/dist/theme-fresh.css']},
       {name: 'ng-nestable',               files: ['vendor/ng-nestable/src/angular-nestable.js',
                                                   'vendor/nestable/jquery.nestable.js']},
-      {name: 'akoenig.deckgrid',          files: ['vendor/angular-deckgrid/angular-deckgrid.js']}
+      {name: 'akoenig.deckgrid',          files: ['vendor/angular-deckgrid/angular-deckgrid.js']},
+      {name: 'ngFileUpload',          files: ['vendor/ng-file-upload/dist/ng-file-upload.min.js',
+                                              'vendor/ng-file-upload/dist/ng-file-upload-shim.min.js',
+                                              'vendor/ng-file-upload/dist/FileApi.min.js']}
     ]
   })
 ;
