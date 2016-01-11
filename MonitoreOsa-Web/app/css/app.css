@@ -13,3 +13,11 @@ body {
 .tial{
   color: #009688;
 }
+.preview {
+  width: 100px;
+  height: auto;
+}
+
+.text {
+  vertical-align: top;
+}
