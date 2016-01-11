@@ -1,10 +1,19 @@
+
 <div ng-controller="InicioController" class="navbar-fixed">
-  <nav>
+<nav>
     <div class="nav-wrapper blue-grey">
-      <a href="#!" class="brand-logo losh3">MonitoreOsa</a>
+      <a href="#!" class="brand-logo">MonitoreOsa</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a ng-click="avistamientos()">Avistamientos</a></li>
-        <li><a ng-click="especies()">Especies</a></li>
+        <li><a ng-click="usuarios()"><i class="material-icons left"><img src="app/img/usuarios.png"/></i>Usuarios</a></li>
+        <li><a ng-click="avistamientos()"><i class="material-icons left"><img src="app/img/loc.png"/></i>Avistamientos</a></li>
+        <li><a ng-click="especies()"><i class="material-icons left"><img src="app/img/especies.png"/></i>Especies</a></li>
+        <li><a ng-click="miPerfil()"><i class="material-icons left"><img src="app/img/face.png"/></i>Mi perfil</a></li>
+        <li><a ng-click="salir()"><i class="material-icons left"><img src="app/img/salir.png"/></i>Cerrar sesión</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a ng-click="avistamientos()"><i class="material-icons left"><img src="app/img/loc"/></i>Avistamientos</a></li>
+        <li><a ng-click="especies()"><i class="material-icons left"><img src="app/img/especies"/></i>Especies</a></li>
       </ul>
     </div>
   </nav>

@@ -1,8 +1,7 @@
-App.controller('AvistamientoCtrl',function($state,$scope,AvistamientoService){
+App.controller('AvistamientoCtrl',function($http,$state,$scope,AvistamientoService){
   $scope.currentPage = 0;
   $scope.pageSize = 5;
   $scope.avistamientos = AvistamientoService.list();
-
   //
   $scope.numberOfPages=function(){
     return Math.ceil($scope.avistamientos.length/$scope.pageSize);
@@ -18,7 +17,10 @@ App.controller('AvistamientoCtrl',function($state,$scope,AvistamientoService){
   });
   //
   $scope.eliminar = function(avistamiento){
-      AvistamientoService.eliminar(avistamiento._id,avistamiento._rev);
+    //
+    $http.delete("https://mmullerc.cloudant.com/avistamientos/"+avistamiento._id+"?rev="+avistamiento._rev+"").then(function(response) {
+      
+    });
   }
 });
 //

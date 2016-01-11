@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="fixed-action-btn horizontal" style="bottom: 225px; right: 130px;">
+    <a ng-click="exportar()" class="btn-floating btn-large waves-effect waves-light orange darken-4 ">
+      <i class="large material-icons"><img src="app/img/edit.png"/></i>
+    </a>
+  </div>
+  <div class="card">
+    <div class="title">
+        <i class="material-icons left"><img src="app/img/face.png"/></i><h5 class="losh3">Mi perfil | información personal</h5>
+    </div>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s6">
+          <h5>Nombre: <span class="tial">{{nombre}}</span></h5>
+        </div>
+        <div class="col s6">
+          <h5>Apellido: <span class="tial">{{apellido}}</span></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="title">
+        <i class="material-icons left"><img src="app/img/contact.png"/></i><h5 class="losh3">Información de contacto</h5>
+    </div>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s6">
+          <h5>Correo: <span class="tial">{{correo}}</span></h5>
+        </div>
+        <div class="col s6">
+          <h5>Teléfono: <span class="tial">{{telefono}}</span></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app/js/Controllers/MiPerfilController.js"></script>

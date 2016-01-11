@@ -115,6 +115,19 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         controller: 'EspeciesCtrl',
         templateUrl: 'app/views/crud-especies.html'
     })
+    .state('app.miPerfil', {
+        url: '/MiPerfil',
+        title: "Mi perfil",
+        controller: 'MiPerfilCtrl',
+        templateUrl: 'app/views/miPerfil.html'
+    })
+    .state('app.usuarios', {
+        url: '/Usuarios',
+        title: "Usuarios",
+        controller: 'UsuarioCtrl',
+        templateUrl: 'app/views/usuarios.html',
+        resolve: helper.resolveFor('angular-md5')
+    })
     // Single Page Routes
     // -----------------------------------
     .state('page', {
@@ -135,13 +148,20 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         url: '/Inicio',
         title: 'MonitoreOsa',
         controller: 'InicioController',
-        templateUrl: 'app/pages/first_page.html'
+        templateUrl: 'app/pages/first_page.html',
+        resolve: helper.resolveFor('angular-md5')
     })
     .state('page.iniciarSesion', {
         url: '/IniciarSesion',
         title: "Bienvenido",
         controller: 'IniciarSesionCtrl',
         templateUrl: 'app/pages/iniciar_sesion.html'
+    })
+    .state('page.lock', {
+        url: '/lock',
+        title: "Error",
+        //controller: 'IniciarSesionCtrl',
+        templateUrl: 'app/pages/lock.html'
     })
 
     // CUSTOM RESOLVES
@@ -369,6 +389,7 @@ App
                                                   'vendor/ag-grid/dist/theme-fresh.css']},
       {name: 'ng-nestable',               files: ['vendor/ng-nestable/src/angular-nestable.js',
                                                   'vendor/nestable/jquery.nestable.js']},
+      {name: 'angular-md5',               files: ['vendor/angular-md5/md5.js']},
       {name: 'akoenig.deckgrid',          files: ['vendor/angular-deckgrid/angular-deckgrid.js']}
     ]
   })

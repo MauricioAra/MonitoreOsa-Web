@@ -5716,18 +5716,28 @@ small {
   padding: 20px;
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
-  background-color: #fff; }
+  background-color: #fff;
+  }
 
 .card {
   position: relative;
   margin: 0.5rem 0 1rem 0;
   background-color: #fff;
   transition: box-shadow .25s;
-  border-radius: 2px; }
+  border-radius: 2px;
+  }
+
+
   .card .card-title {
     font-size: 24px;
-    font-weight: 300; }
-    .card .card-title.activator {
+    font-weight: 300;
+  }
+  .title{
+    background-color: #00bfa5;
+    padding: 8px;
+    border-radius: 2px;
+  }
+  .card .card-title.activator {
       cursor: pointer; }
   .card.small, .card.medium, .card.large {
     position: relative; }
@@ -5799,9 +5809,11 @@ small {
     height: 100%;
     z-index: 1;
     display: none; }
+
     .card .card-reveal .card-title {
       cursor: pointer;
-      display: block; }
+      display: block;
+    }
 
 #toast-container {
   display: block;
@@ -6054,6 +6066,7 @@ button.btn-floating {
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 998; }
+
   .fixed-action-btn.active ul {
     visibility: visible; }
   .fixed-action-btn.horizontal {
@@ -6082,6 +6095,38 @@ button.btn-floating {
       margin-bottom: 15px; }
     .fixed-action-btn ul a.btn-floating {
       opacity: 0; }
+      /*---------------------------------------*/
+    .table-all-buttons{
+
+    }
+      .table-all-buttons.active ul {
+        visibility: visible; }
+      .table-all-buttons.horizontal {
+        padding: 0 0 0 15px; }
+        .table-all-buttons.horizontal ul {
+          text-align: right;
+          right: 64px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 100%;
+          left: initial;
+          width: 500px;
+          /*width 100% only goes to width of button container */ }
+          .table-all-buttons.horizontal ul li {
+            display: inline-block;
+            margin: 15px 15px 0 0; }
+      .table-all-buttons ul {
+        left: 0;
+        right: 0;
+        text-align: center;
+        position: absolute;
+        bottom: 64px;
+        margin: 0;
+        visibility: hidden; }
+        .table-all-buttons ul li {
+          margin-bottom: 15px; }
+        .table-all-buttons ul a.btn-floating {
+          opacity: 0; }
 
 .btn-flat {
   box-shadow: none;
@@ -6264,7 +6309,24 @@ a.waves-effect .waves-ripple {
   margin: auto;
   overflow-y: auto;
   border-radius: 2px;
-  will-change: top, opacity; }
+  will-change: top, opacity;
+}
+.modalRetro {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #00c853;
+  padding: 0;
+  color:white;
+  text-align: center;
+  max-height: 35%;
+  width: 40%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
   @media only screen and (max-width : 992px) {
     .modal {
       width: 80%; } }

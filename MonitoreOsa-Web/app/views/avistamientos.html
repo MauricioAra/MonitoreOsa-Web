@@ -1,7 +1,10 @@
 <div class="container">
   <div class="card">
+    <div class="title">
+        <i class="material-icons left"><img src="app/img/loc.png"/></i><h5 class="losh3">Avistamientos</h5>
+    </div>
     <div class="card-content">
-     <h5 class="losh3 Regular">Avistamientos</h5>
+     <label>{{nombre}}</label>
       <div class="input-field col s12">
         <i class="material-icons prefix">search</i>
         <input type="text" ng-model="buscar"/>
@@ -21,7 +24,7 @@
           <div class="col s12">
             <div id="exportable">
             <table class="table highlight bordered responsive-table">
-              <thead>
+              <thead class=" losh3 title">
                 <tr>
                   <th>Avistamiento</th>
                   <th>Fecha</th>
@@ -39,7 +42,7 @@
                   <td>{{avistamiento.avistamiento.latitud}}</td>
                   <td>{{avistamiento.avistamiento.longitud}}</td>
                   <td>
-                    <a class="btn-floating btn-large waves-effect waves-light teal accent-4" href="#" ng-click="eliminar(avistamiento)"><i class="material-icons"><img src="app/img/options.png"/></i></a>
+                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="eliminar(avistamiento)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
                   </td>
                 </tr>
               </tbody>

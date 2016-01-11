@@ -1,14 +1,16 @@
-App.service('UsuarioService', function ($http) {
-    //Variable global que maneja el id dinamico de los objetos nuevos
-    //Arreglo de objetod empleados
-    var usuarios =  [
-       {'id':0, 'nombre':'Mauricio', 'correo':'maraicah.ac.cr', 'telefono':'85310413','contrasena':'mauricio'}
-     ]
-    this.getUsuario = function (pcorreo, pcontrasena) {
-        for (i in usuarios) {
-            if (usuarios[i].correo == pcorreo && usuarios[i].contrasena == pcontrasena) {
-                return usuarios[i];
-            }
-        }
+App.service('UsuarioService', function ($http,$state) {
+    //
+    this.list = function () {
+      var usuario = {};
+      var listaUsuarios = [];
+      $http.get("https://mmullerc.cloudant.com/usuarios/_all_docs?&include_docs=true").then(function(response) {
+        for(var i = 0; i < response.data.rows.length; i++){
+            usuario = response.data.rows[i].doc;
+            listaUsuarios[i] = usuario;
+          }
+      });
+      return listaUsuarios;
     }
+    //
+
 });

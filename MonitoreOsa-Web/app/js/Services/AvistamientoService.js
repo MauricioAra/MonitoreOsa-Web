@@ -12,11 +12,5 @@ App.service('AvistamientoService',function($http){
     });
     return listaAvistamientos;
   }
-  //
-  this.eliminar = function (pid,prev) {
-    console.log(prev);
-    $http.delete("https://mmullerc.cloudant.com/avistamientos/pid?rev=prev").then(function(response) {
-      console.log(response);
-    });
-  }
+
 });
