@@ -34,8 +34,8 @@
                   <td>{{especie.nombre}}</td>
                   <td>{{especie.nombre_cientifico}}</td>
                   <td>
-                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="delete(empleado.id)"><i class="material-icons"><img src="app/img/ver.png"/></i></a>
-                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="delete(empleado.id)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
+                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="verEspecie(especie)"><i class="material-icons"><img src="app/img/ver.png"/></i></a>
+                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="eliminar(especie)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
                   </td>
                 </tr>
               </tbody>
@@ -98,7 +98,7 @@
      <div flow-init
        flow-name="uploader.flow"
        flow-files-added="processFiles($files)">
-    <button ng-click="convertirImagen()" flow-btn type="file">Ingresar Imagen</button>
+    <button class="waves-effect waves-light btn" ng-click="convertirImagen()" flow-btn type="file"><i class="material-icons left"><img src="app/img/imagen.png"/></i>Ingresar Imagen</button>
   </div>
 
    </form>
@@ -108,5 +108,36 @@
   <div class="modal-footer">
     <a ng-click="aceptarRegistro()" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
     <a class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+  </div>
+</div>
+<!--Modal eliminar especie -->
+<div id="confirmacion" class="modal modalconfirmacion modal-fixed-footer">
+  <div class="modal-content">
+    <h4>¡Alerta!</h4>
+    <h5>¿Desea eliminar el registro?</h5>
+    <a ng-click="si()" class="waves-effect waves-light btn yellow darken-1">Sí</a>
+    <a ng-click="no()" class="waves-effect waves-light btn yellow darken-1">No</a>
+  </div>
+</div>
+ <!-- Modal Informacion -->
+  <div id="informacion" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4><span class="dar">{{nombreModal}}</span</h4>
+      <img class="imagen" ng-src="app/img/chacho.jpg">
+      <h5><span class="tial">Nombre científico:</span><span class="texto"> {{cientificoModal}}</span></h5>
+      <h5><span class="tial">Descripción:</span><span class="texto"> {{descripcionModal}}</span></h5>
+      <h5><span class="tial">Tipo:</span><span class="texto"> {{tipoModal}}</span></h5>
+    </div>
+    <div class="modal-footer">
+      <a ng-click="no()" class="modal-action modal-close waves-effect waves-green btn-flat ">Cerrar</a>
+    </div>
+  </div>
+  
+  <div id="registrado" class="modal modalRetro modal-fixed-footer">
+  <div class="modal-content">
+    <i class="material-icons"><img src="app/img/che.png"/></i>
+    <h4>¡Enhorabuena!</h4>
+    <h5>¡Registro exitoso!</h5>
+
   </div>
 </div>
