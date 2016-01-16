@@ -1,7 +1,9 @@
 App.controller('InicioController',function($rootScope,$state,$scope,AvistamientoService,$timeout,UsuarioService){
   //
   var init = function () {
-    $rootScope.usuarios = UsuarioService.list();
+    if(localStorage.getItem('rol') == "General"){
+      $scope.mostrar = !$scope.mostrar;
+    }
   };
   init();
   console.log($rootScope.usuarios);
@@ -48,6 +50,7 @@ App.controller('InicioController',function($rootScope,$state,$scope,Avistamiento
     localStorage.setItem("telefono","");
     localStorage.setItem("correo","");
     localStorage.setItem("contrasena","");
+    localStorage.setItem("rol","");
     $state.go('page.inicio');
   }
 });

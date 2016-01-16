@@ -1,4 +1,4 @@
-App.controller('IniciarSesionCtrl',function($rootScope,$state,$scope,UsuarioService,md5){
+App.controller('IniciarSesionCtrl',function($http,$rootScope,$state,$scope,UsuarioService,md5){
   //
   $(document).ready(function(){
     $('.collapsible').collapsible({
@@ -6,34 +6,48 @@ App.controller('IniciarSesionCtrl',function($rootScope,$state,$scope,UsuarioServ
     });
   });
 
-  //
+  //"https://mmullerc.cloudant.com/usuarios/_all_docs?&include_docs=true"
+  //var contrasenaHash = md5.createHash($scope.contrasena);
   $scope.go = function(){
-    //alert(md5.createHash($scope.contrasena));
     var contrasenaHash = md5.createHash($scope.contrasena);
-    var entro = validar(contrasenaHash);
-    if(entro == true){
-      $state.go('app.avistamientos');
-    }else{
-      $state.go('page.lock');
-    }
-  }
-  function validar(pcontrasena){
-    var retro = false;
-    angular.forEach($rootScope.usuarios, function(usuario, key){
-    if(usuario.correo == $scope.correo && usuario.contrasena == pcontrasena){
-        localStorage.setItem("id", usuario._id);
-        localStorage.setItem("nombre", usuario.nombre);
-        localStorage.setItem("apellido",usuario.apellido);
-        localStorage.setItem("cedula",usuario.cedula);
-        localStorage.setItem("telefono",usuario.telefono);
-        localStorage.setItem("correo",usuario.correo);
-        localStorage.setItem("contrasena",usuario.contrasena);
-        retro = true;
+    $http.get("https://mmullerc.cloudant.com/usuarios/"+$scope.correo+"")
+    .success(function(response) {
+      if(response.status = 200){
+          if(response.contrasena == contrasenaHash){
+            localStorage.setItem("id", response._id);
+            localStorage.setItem("nombre", response.nombre);
+            localStorage.setItem("apellido",response.apellido);
+            localStorage.setItem("cedula",response.cedula);
+            localStorage.setItem("telefono",response.telefono);
+            localStorage.setItem("correo",response.correo);
+            localStorage.setItem("rol",response.rol);
+            localStorage.setItem("fecha",response.fecha_nacimiento);
+            localStorage.setItem("contrasena",response.contrasena);
+            $state.go('app.avistamientos');
+          }else{
+            $state.go('page.lock');
+          }
+      }
+    })
+    .error(function(err){
+      if(err.error == "not_found"){
+        alert("usuario incorrecto");
       }
     });
-    return retro;
   }
+
 });
+
+
+
+
+
+
+
+
+
+
+
 //localStorage.setItem("id", value._id);
 //localStorage.setItem("nombre", value.nombre);
 //localStorage.setItem("apellido",value.apellido);

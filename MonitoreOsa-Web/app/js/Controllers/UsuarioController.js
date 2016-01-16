@@ -2,6 +2,8 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
   $scope.currentPage = 0;
   $scope.pageSize = 5;
   $scope.listaUsuarios = UsuarioService.list();
+  var _id;
+  var _rev;
 
   //
   $scope.numberOfPages=function(){
@@ -24,8 +26,10 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
     var telefono = $scope.telefono;
     var rol = "General";
     var contrasenaHash = md5.createHash($scope.contrasena);
+    var id = correo;
 
     var objUsuario = {
+      "_id":id,
       "nombre":nombre,
       "apellido":apellido,
       "cedula":cedula,
@@ -37,6 +41,24 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
     $http.post("https://mmullerc.cloudant.com/usuarios/", objUsuario).then(function(response) {
         $scope.listaUsuarios = UsuarioService.list();
         $('#registrado').openModal();
+    });
+  }
+  
+  //
+  $scope.eliminar = function(usuario){
+    $('#confirmacion').openModal();
+    _id = usuario._id;
+    _rev = usuario._rev;
+  }
+  //
+  $scope.no = function(){
+    $('#confirmacion').closeModal();
+  }
+  //
+    $scope.si = function(){
+    $http.delete("https://mmullerc.cloudant.com/usuarios/"+_id+"?rev="+_rev+"").then(function(response) {
+      $('#confirmacion').closeModal();
+      $scope.listaUsuarios = UsuarioService.list();
     });
   }
 });

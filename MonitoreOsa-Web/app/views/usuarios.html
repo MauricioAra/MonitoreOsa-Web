@@ -41,7 +41,7 @@
                   <td>{{usuario.correo}}</td>
                   <td>{{usuario.telefono}}</td>
                   <td>
-                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="prueba()"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
+                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="eliminar(usuario)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
                   </td>
                 </tr>
               </tbody>
@@ -117,8 +117,18 @@
   <div class="modal-content">
     <i class="material-icons"><img src="app/img/che.png"/></i>
     <h4>¡Enhorabuena!</h4>
-    <h5>¡Usuario registrado correctamente!</h5>
+    <h5>¡Registro exitoso!</h5>
 
+  </div>
+</div>
+
+<!--Modal eliminar usuario -->
+<div id="confirmacion" class="modal modalconfirmacion modal-fixed-footer">
+  <div class="modal-content">
+    <h4>¡Alerta!</h4>
+    <h5>¿Desea eliminar el registro?</h5>
+    <a ng-click="si()" class="waves-effect waves-light btn yellow darken-1">Sí</a>
+    <a ng-click="no()" class="waves-effect waves-light btn yellow darken-1">No</a>
   </div>
 </div>
 

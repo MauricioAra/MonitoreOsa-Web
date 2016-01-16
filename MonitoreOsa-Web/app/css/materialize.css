@@ -5984,7 +5984,7 @@ small {
   transform-origin: 50% 10%;
   will-change: transform, opacity; }
 
-.btn, .btn-large, .btn-flat {
+.btn, .btn-large, .btn-flat{
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -6327,6 +6327,24 @@ a.waves-effect .waves-ripple {
   border-radius: 2px;
   will-change: top, opacity;
 }
+/*Modal confirmación*/
+.modalconfirmacion {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fdd835;
+  padding: 0;
+  color:white;
+  text-align: center;
+  max-height: 35%;
+  width: 40%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
+
   @media only screen and (max-width : 992px) {
     .modal {
       width: 80%; } }
@@ -6342,7 +6360,7 @@ a.waves-effect .waves-ripple {
     padding: 4px 6px;
     height: 56px;
     width: 100%; }
-    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat  {
       float: right;
       margin: 6px 0; }
 
