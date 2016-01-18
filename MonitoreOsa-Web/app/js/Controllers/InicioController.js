@@ -2,9 +2,11 @@ App.controller('InicioController',function($rootScope,$state,$scope,Avistamiento
   //
   var init = function () {
     $rootScope.usuarios = UsuarioService.list();
+    if(localStorage.getItem('nombre') == ''){
+      $state.go('page.inicio');
+    }
   };
   init();
-  console.log($rootScope.usuarios);
   //Parallax go
   $(document).ready(function(){
     $('.parallax').parallax();

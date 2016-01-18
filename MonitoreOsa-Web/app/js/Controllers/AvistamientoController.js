@@ -19,7 +19,9 @@ App.controller('AvistamientoCtrl',function($http,$state,$scope,AvistamientoServi
   $scope.eliminar = function(avistamiento){
     //
     $http.delete("https://mmullerc.cloudant.com/avistamientos/"+avistamiento._id+"?rev="+avistamiento._rev+"").then(function(response) {
-      
+
+      console.log(response);
+
     });
   }
 });

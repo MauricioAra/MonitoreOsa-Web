@@ -34,7 +34,7 @@
                   <td>{{especie.nombre}}</td>
                   <td>{{especie.nombre_cientifico}}</td>
                   <td>
-                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="delete(empleado.id)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
+                    <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="eliminar(especie)"><i class="material-icons"><img src="app/img/eliminar.png"/></i></a>
                     <a class="btn-floating btn-large waves-light btn-flat waves-effect" href="#" ng-click="delete(empleado.id)"><i class="material-icons"><img src="app/img/ver.png"/></i></a>
                   </td>
                 </tr>
@@ -76,8 +76,14 @@
      </div>
      <div class="row">
        <div class="input-field col s12">
+         <textarea id="habitat" class="materialize-textarea"></textarea>
+          <label for="habitat">Hábitat</label>
+       </div>
+     </div>
+     <div class="row">
+       <div class="input-field col s12">
          <textarea id="descripcion" class="materialize-textarea"></textarea>
-          <label for="descripcion">Descripcion</label>
+          <label for="descripcion">Descripción</label>
        </div>
      </div>
      <div class="row">
