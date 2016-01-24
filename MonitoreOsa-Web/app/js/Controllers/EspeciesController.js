@@ -67,11 +67,16 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
   }
   //Ver especie
   $scope.verEspecie = function(especie){
+
+    console.log(especie);
+    $scope.imagenModal = 'https://mmullerc.cloudant.com/especies/'+especie._id+'/imagen';
+    $scope.habitatModal = especie.habitat;
+    $scope.nombreModal = especie.nombre;
+    $scope.cientificoModal = especie.nombre_cientifico;
+    $scope.descripcionModal = especie.descripcion;
+    $scope.tipoModal =  especie.tipo;
+
       $('#informacion').openModal();
-      $scope.nombreModal = especie.nombre;
-      $scope.cientificoModal = especie.nombre_cientifico;
-      $scope.descripcionModal = especie.descripcion;
-      $scope.tipoModal =  especie.tipo;
   }
   //Registrar especie
   $scope.aceptarRegistro = function(){
@@ -108,13 +113,6 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
 
     });
   }
-  $scope.eliminar = function(especie){
-    //
-    $http.delete("https://mmullerc.cloudant.com/especies/"+especie._id+"?rev="+especie._rev+"").then(function(response) {
-    //
-    });
-  }
-
   $(document).ready(function() {
     $('select').material_select();
   });

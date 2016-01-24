@@ -1,8 +1,10 @@
 App.controller('InicioController',function($rootScope,$state,$scope,AvistamientoService,$timeout,UsuarioService){
   //
   var init = function () {
+
     if(localStorage.getItem('rol') == "General"){
       $scope.mostrar = !$scope.mostrar;
+    }
   };
   init();
   //Parallax go

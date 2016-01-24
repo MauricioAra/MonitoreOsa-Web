@@ -27,17 +27,17 @@ body {
     font-size: 20px;
 }
 .dar{
-  color:#37474f;  
+  color:#37474f;
 }
 .imagen{
     position: relative;
-    left: 35%;
+    left: 30%;
     right:0;
     top: 15px;
     bottom: 20px;
-    width: 210px;
-    height: 210px;
-    display: block; 
+    width: 250px;
+    height: 250px;
+    display: block;
     border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
