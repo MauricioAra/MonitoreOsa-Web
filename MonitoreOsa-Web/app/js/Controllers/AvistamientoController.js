@@ -19,6 +19,7 @@ App.controller('AvistamientoCtrl',function($http,$state,$scope,AvistamientoServi
   });
   //
   $scope.eliminar = function(avistamiento){
+
     $('#confirmacion').openModal();
     _id = avistamiento._id;
     _rev = avistamiento._rev;

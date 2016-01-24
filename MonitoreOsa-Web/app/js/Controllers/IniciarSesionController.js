@@ -37,23 +37,3 @@ App.controller('IniciarSesionCtrl',function($http,$rootScope,$state,$scope,Usuar
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-//localStorage.setItem("id", value._id);
-//localStorage.setItem("nombre", value.nombre);
-//localStorage.setItem("apellido",value.apellido);
-//localStorage.setItem("cedula",value.cedula);
-//localStorage.setItem("telefono",value.telefono);
-//localStorage.setItem("correo",value.correo);
-//localStorage.setItem("contrasena",value.contrasena);
-//$state.go('app.avistamientos');
-//$state.go('page.lock');

@@ -3,10 +3,8 @@ App.controller('InicioController',function($rootScope,$state,$scope,Avistamiento
   var init = function () {
     if(localStorage.getItem('rol') == "General"){
       $scope.mostrar = !$scope.mostrar;
-    }
   };
   init();
-  console.log($rootScope.usuarios);
   //Parallax go
   $(document).ready(function(){
     $('.parallax').parallax();
