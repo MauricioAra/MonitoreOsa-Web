@@ -19,6 +19,40 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
   }
 
   $scope.aceptarRegistro = function(){
+    var entro = false;
+    var cedulaValidar = document.getElementById("cedula").value;
+    var nombreValidar = document.getElementById("nombre").value;
+    var apellidoValidar = document.getElementById("apellido").value;
+    var correoValidar = document.getElementById("correo").value;
+    var telefonoValidar = document.getElementById("telefono").value;
+    var contrasenaValidar = document.getElementById("contrasena").value;
+
+    if(cedulaValidar == ''){
+      entro = true;
+    }
+    if(nombreValidar == ''){
+      entro = true;
+    }
+    if(apellidoValidar == ''){
+      entro = true;
+    }
+    if(correoValidar == ''){
+      entro = true;
+    }
+    if(telefonoValidar == ''){
+      entro = true;
+    }
+    if(contrasenaValidar == ''){
+      entro = true;
+    }
+    if(entro == false){
+      registrar();
+    }else{
+      Materialize.toast('¡Por favor llenar los campos!', 3000);
+    }
+  }
+  //funcionencargada de registrar
+  function registrar(){
     var cedula = $scope.cedula;
     var nombre = $scope.nombre;
     var apellido = $scope.apellido;
@@ -43,7 +77,7 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
         $('#registrado').openModal();
     });
   }
-  
+
   //
   $scope.eliminar = function(usuario){
     $('#confirmacion').openModal();

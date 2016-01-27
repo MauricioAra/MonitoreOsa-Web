@@ -4,6 +4,8 @@
   <div class="section white">
     <div class="row container">
       <h2 class="header">MonitoreOsa</h2>
+      <p class="grey-text text-darken-3 lighten-3">MONITOREOSA es una aplicación de servicio comunitario para el compartimiento de avistamientos de especies en la Península de Osa.</p>
+      <p class="grey-text text-darken-3 lighten-3">Haga parte de la familia MONITOREOSA, desarrolla tu red, y juntos tomamos la dirección de un desarrollo sin destrucción.</p>
       <p class="grey-text text-darken-3 lighten-3"></p>
       <div ng-controller="IniciarSesionCtrl" class="col s6">
           <ul class="collapsible popout" data-collapsible="accordion">
@@ -42,10 +44,44 @@
   <div class="parallax-container">
     <div class="parallax"><img src="app/img/img_1_parallax.JPG"></div>
   </div>
-  <div class="section white">
+  <div ng-controller="InicioController"class="section white">
     <div class="row container">
       <h2 class="header">Misión</h2>
-      <p class="grey-text text-darken-3 lighten-3">Monitoreo comunitario de la Península de Osa, para la preservación de la naturaleza.</p>
+      <p class="grey-text text-darken-3 lighten-3">Desarrollar una red lúdica y atractiva para que todos los ciudadanos y organizaciones hagan parte del monitoreo ecológico de la península de Osa al recopilando datos y fotos de lo que pueden observar en su medio ambiente.</p>
+      <h2 class="header">Visión</h2>
+      <p class="grey-text text-darken-3 lighten-3">Los socios de MONITOREOSA hacen parte de una plataforma participativa y democrática. Involucrarse como socio lleva diferentes derechos y deberes, pero todos los usuarios de la aplicación recibirán informaciones y actualizaciones sobre los proyectos llevados a cabo, que sean socios o no.</p>
+      <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header"><i class="small mdi-action-input"></i>Colaboradores</div>
+          <div class="collapsible-body grey lighten-4">
+            <div class="row">
+                   <div class="card ">
+                     <div class="card-content">
+                       <ul class="collection">
+                         <li ng-repeat="colaborador in colaborators"class="collection-item active">{{colaborador.nombre}}</li>
+                       </ul>
+                   </div>
+                 </div>
+            </div>
+          </div>
+        </li>
+    </ul>
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="small mdi-action-input"></i>Desarrolladores</div>
+        <div class="collapsible-body grey lighten-4">
+          <div class="row">
+                 <div class="card ">
+                   <div class="card-content">
+                     <ul class="collection">
+                       <li ng-repeat="developer in developers"class="collection-item active">{{developer.nombre }} | {{ developer.correo}}</li>
+                     </ul>
+                 </div>
+               </div>
+          </div>
+        </div>
+      </li>
+  </ul>
     </div>
   </div>
 <script type="text/javascript" src="app/js/Controllers/InicioController.js"></script>
