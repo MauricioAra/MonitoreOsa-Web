@@ -10,7 +10,7 @@ App.controller('IniciarSesionCtrl',function($http,$rootScope,$state,$scope,Usuar
   //var contrasenaHash = md5.createHash($scope.contrasena);
   $scope.go = function(){
     var contrasenaHash = md5.createHash($scope.contrasena);
-    $http.get("https://mmullerc.cloudant.com/usuarios/"+$scope.correo+"")
+    $http.get("https://monitoreosa.cloudant.com/usuarios/"+$scope.correo+"")
     .success(function(response) {
       if(response.status = 200){
           if(response.contrasena == contrasenaHash){

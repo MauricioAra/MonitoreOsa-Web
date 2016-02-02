@@ -72,7 +72,7 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
       "rol":rol,
       "contrasena":contrasenaHash
     }
-    $http.post("https://mmullerc.cloudant.com/usuarios/", objUsuario).then(function(response) {
+    $http.post("https://monitoreosa.cloudant.com/usuarios/", objUsuario).then(function(response) {
         $scope.listaUsuarios = UsuarioService.list();
         $('#registrado').openModal();
     });
@@ -90,7 +90,7 @@ App.controller('UsuarioCtrl',function($state,$scope,UsuarioService,md5,$http){
   }
   //
     $scope.si = function(){
-    $http.delete("https://mmullerc.cloudant.com/usuarios/"+_id+"?rev="+_rev+"").then(function(response) {
+    $http.delete("https://monitoreosa.cloudant.com/usuarios/"+_id+"?rev="+_rev+"").then(function(response) {
       $('#confirmacion').closeModal();
       $scope.listaUsuarios = UsuarioService.list();
     });

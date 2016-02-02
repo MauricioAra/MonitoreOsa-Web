@@ -30,7 +30,7 @@ App.controller('AvistamientoCtrl',function($http,$state,$scope,AvistamientoServi
   }
   //
   $scope.si = function(){
-    $http.delete("https://mmullerc.cloudant.com/avistamientos/"+_id+"?rev="+_rev+"").then(function(response) {
+    $http.delete("https://monitoreosa.cloudant.com/avistamientos/"+_id+"?rev="+_rev+"").then(function(response) {
       $('#confirmacion').closeModal();
       $scope.avistamientos = AvistamientoService.list();
     });

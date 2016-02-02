@@ -13,7 +13,7 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
 
   $scope.uploader = {};
 
-  $http.get("https://mmullerc.cloudant.com/especies/_all_docs?&include_docs=true").then(function(response) {
+  $http.get("https://monitoreosa.cloudant.com/especies/_all_docs?&include_docs=true").then(function(response) {
     for(var i = 0; i < response.data.rows.length; i++){
         especie = response.data.rows[i].doc;
         $scope.listaEspecies[i] = especie;
@@ -56,7 +56,7 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
   }
   //Si
   $scope.si = function(){
-      $http.delete("https://mmullerc.cloudant.com/especies/"+id+"?rev="+rev+"").then(function(response) {
+      $http.delete("https://monitoreosa.cloudant.com/especies/"+id+"?rev="+rev+"").then(function(response) {
         $('#confirmacion').closeModal();
         $scope.listaEspecies = EspecieService.list();
     });
@@ -69,7 +69,7 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
   $scope.verEspecie = function(especie){
 
     console.log(especie);
-    $scope.imagenModal = 'https://mmullerc.cloudant.com/especies/'+especie._id+'/imagen';
+    $scope.imagenModal = 'https://monitoreosa.cloudant.com/especies/'+especie._id+'/imagen';
     $scope.habitatModal = especie.habitat;
     $scope.nombreModal = especie.nombre;
     $scope.cientificoModal = especie.nombre_cientifico;
@@ -80,6 +80,37 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
   }
   //Registrar especie
   $scope.aceptarRegistro = function(){
+    var entro = false;
+    var nombreValidar = document.getElementById("nombre_especie").value;
+    var nombreCientificoValidar = document.getElementById("nombre_cientifico").value;
+    var habitadValidar = document.getElementById("habitat").value;
+    var descripcionValidar = document.getElementById("descripcion").value;
+    var seleccionValidar = document.getElementById("sltClases").value;
+
+    if(nombreValidar == ''){
+      entro = true;
+    }
+    if(nombreCientificoValidar == ''){
+      entro = true;
+    }
+    if(habitadValidar == ''){
+      entro = true;
+    }
+    if(descripcionValidar == ''){
+      entro = true;
+    }
+    if(seleccionValidar == ''){
+      entro = true;
+    }
+
+    if(entro == false){
+      registrar();
+    }else{
+      Materialize.toast('¡Por favor llenar los campos!', 3000);
+    }
+  }
+  //
+  function registrar(){
     var nombre = document.getElementById("nombre_especie").value;
     var nombre_cientifico = document.getElementById("nombre_cientifico").value;
     var habitat = document.getElementById("habitat").value;
@@ -105,7 +136,7 @@ App.controller('EspeciesCtrl',function($state,$scope, $http, Upload,EspecieServi
         }
       }
     }
-    $http.post("https://mmullerc.cloudant.com/especies/", objRegistro).then(function(response) {
+    $http.post("https://monitoreosa.cloudant.com/especies/", objRegistro).then(function(response) {
 
       $('#registrado').openModal();
       $scope.listaEspecies = EspecieService.list();
